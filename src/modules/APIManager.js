@@ -1,7 +1,22 @@
+const remoteURL = "http://localhost:5002"
 
+export default class APIManager {
+  constructor(props) {
+    this.name = props
+  }
+  get(id) {
+    return fetch(`${remoteURL}/${this.name}/${id}`).then(data => data.json())
+  }
 
+  getAll() {
+    return fetch(`${remoteURL}/${this.name}`).then(data => data.json())
+  }
 
-
-
-
+  deleteItem(id) {
+    return fetch(`${remoteURL}/${this.name}/${id}`, {
+      method: "DELETE"
+    })
+      .then(response => response.json())
+  }
+}
 

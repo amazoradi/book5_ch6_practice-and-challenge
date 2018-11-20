@@ -11,6 +11,7 @@ import OwnerManager from "../modules/OwnerManager"
 import AnimalOwnersManager from "../modules/AnimalOwnersManager"
 
 
+
 export default class ApplicationViews extends Component {
 
   state = {
@@ -56,7 +57,7 @@ export default class ApplicationViews extends Component {
   }
 
   deleteOwner = id => {
-   OwnerManager.deleteOwners(id)
+    OwnerManager.deleteOwners(id)
       .then(() => LocationManager.getAll())
       .then(owners => this.setState({
         owners: owners
