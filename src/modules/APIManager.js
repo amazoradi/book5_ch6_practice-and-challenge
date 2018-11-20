@@ -8,11 +8,11 @@ export default class APIManager {
     return fetch(`${remoteURL}/${this.name}/${id}`).then(data => data.json())
   }
 
-  getAll() {
+  all() {
     return fetch(`${remoteURL}/${this.name}`).then(data => data.json())
   }
 
-  deleteItem(id) {
+  delete(id) {
     return fetch(`${remoteURL}/${this.name}/${id}`, {
       method: "DELETE"
     })

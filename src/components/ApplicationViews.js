@@ -39,8 +39,7 @@ export default class ApplicationViews extends Component {
   }
 
   deleteAnimal = id => {
-    AnimalManager.deleteAnimal(id)
-      .then(() => AnimalManager.getAll())
+    AnimalManager.removeAndList(id)
       .then(animals => this.setState({
         animals: animals
       })
@@ -48,8 +47,7 @@ export default class ApplicationViews extends Component {
   }
 
   fireEmployee = id => {
-    EmployeeManager.deleteEmployee(id)
-      .then(() => EmployeeManager.getAll())
+    EmployeeManager.removeAndList(id)
       .then(employees => this.setState({
         employees: employees
       })
@@ -57,8 +55,7 @@ export default class ApplicationViews extends Component {
   }
 
   deleteOwner = id => {
-    OwnerManager.deleteOwners(id)
-      .then(() => LocationManager.getAll())
+    OwnerManager.removeAndList(id)
       .then(owners => this.setState({
         owners: owners
       })
